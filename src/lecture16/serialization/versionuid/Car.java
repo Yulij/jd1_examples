@@ -1,9 +1,8 @@
-package lecture15.serialization.versionuid;
+package lecture16.serialization.versionuid;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data

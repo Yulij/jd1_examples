@@ -1,4 +1,4 @@
-package lecture20.digits;
+package lecture30.digits;
 
 
 import java.text.ParseException;
@@ -9,7 +9,7 @@ public class NumberFormatExample {
         Locale locale = new Locale("ru", "RU");
         String localizedRussianCurrency = NumberFormatUtils.printLocalizedCurrency(locale, 23500.500);
         System.out.println("Localized russian currency: " + localizedRussianCurrency);
-        
+
         Locale usaLocale = Locale.US;
         String localizedUSACurrency = NumberFormatUtils.printLocalizedCurrency(usaLocale, 13500.500);
         System.out.println("Localized usa currency: " + localizedUSACurrency);

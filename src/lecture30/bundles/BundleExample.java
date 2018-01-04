@@ -1,4 +1,4 @@
-package lecture20.bundles;
+package lecture30.bundles;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -11,8 +11,8 @@ public class BundleExample {
     }
 
     private static void printGreetingMessage(Locale locale) {
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("lecture20.MessagesBundle", locale);
-        String greeting = resourceBundle.getString("top");
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("lecture30.MessagesBundle", locale);
+        String greeting = resourceBundle.getString("greeting");
         System.out.println(greeting);
     }
 }

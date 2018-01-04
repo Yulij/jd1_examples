@@ -1,4 +1,4 @@
-package lecture20.locale;
+package lecture30.locale;
 
 import java.util.Locale;
 

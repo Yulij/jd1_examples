@@ -1,4 +1,4 @@
-package lecture15.serialization.graph;
+package lecture16.serialization.graph;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

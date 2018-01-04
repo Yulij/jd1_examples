@@ -1,8 +1,8 @@
-package lecture15.serialization.versionuid;
+package lecture16.serialization.versionuid;
 
 import java.util.Date;
 
-import lecture15.serialization.SerializationUtil;
+import lecture16.serialization.SerializationUtil;
 
 public class SerializationExample {
     static final String fileName = "serialVersionUID.txt";

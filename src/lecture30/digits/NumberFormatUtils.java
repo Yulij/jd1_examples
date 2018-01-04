@@ -1,4 +1,4 @@
-package lecture20.digits;
+package lecture30.digits;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
