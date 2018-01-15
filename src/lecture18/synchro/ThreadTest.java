@@ -4,7 +4,8 @@ package lecture18.synchro;
  * Created by yslabko on 016 16.05.16.
  */
 public class ThreadTest {
-    private int a=1, b=2;
+    private volatile int a=1;
+    private volatile int b=2;
     public void one() {a=b;}
 
     public void two() {b=a;}
@@ -31,7 +32,7 @@ public class ThreadTest {
 
             // даем потокам время отработать
             try {
-                Thread.sleep(10);
+                Thread.sleep(3);
             } catch (InterruptedException e) {}
 
             // анализируем финальные значения
