@@ -21,11 +21,11 @@ public class ResultSetMetaDataDemo {
         ResultSet rs= null;
 
         try (Connection connection = ConnectionManager.getConnection();
-             Statement st = connection.createStatement()) {
+            Statement st = connection.createStatement()) {
             rs = st.executeQuery("SELECT ITEM_ID, SUPPLIER, MODEL, PRICE FROM ITEM");
-            System.out.println("Items:\nId\tSupplier\t\tModel\t\tPrice");
+            System.out.printf("Items:%nId\tSupplier\t\tModel\t\tPrice %n");
             while (rs.next()) {
-                System.out.println(rs.getLong(1) + "\t" + rs.getString(2) + "\t\t" + rs.getString(3) + "\t\t" + rs.getDouble(4));
+                System.out.printf("%-4d %-10s %-15s %-6.2f%n", rs.getLong(1), rs.getString(2), rs.getString(3), rs.getDouble(4));
             }
             ResultSetMetaData md = rs.getMetaData();
             System.out.println("Total row count: " + md.getColumnCount());
@@ -35,7 +35,9 @@ public class ResultSetMetaDataDemo {
             System.out.println(e.getMessage());
         } finally {
             try {
-                rs.close();
+                if (rs!=null) {
+                    rs.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
