@@ -1,6 +1,5 @@
-package lecture24.entity;
+package lecture25.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,13 +10,11 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Item {
     private long id;
     private String supplier;
     private String model;
     private Double price;
-    private Double pr;
 
     public Item(String supplier, String model, Double price) {
         this.supplier = supplier;

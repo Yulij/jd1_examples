@@ -30,7 +30,8 @@ public class ResultSetMetaDataDemo {
             ResultSetMetaData md = rs.getMetaData();
             System.out.println("Total row count: " + md.getColumnCount());
         } catch (SQLException e) {
-            System.out.println("Проблемы с получением данных");;
+            System.out.println("Проблемы с получением данных");
+            e.printStackTrace();
         } catch (DbManagerException e) {
             System.out.println(e.getMessage());
         } finally {
