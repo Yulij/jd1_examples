@@ -10,6 +10,5 @@ public class Lab3_3 {
 			y = false;
 		}
 		System.out.println(y);
-
 	}
 }

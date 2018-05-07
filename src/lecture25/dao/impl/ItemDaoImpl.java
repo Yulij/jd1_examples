@@ -77,6 +77,8 @@ public class ItemDaoImpl implements ItemDao {
         return item;
     }
 
+    void method(int a, double d, char ... chars) {}
+
     @Override
     public Item get(Serializable id) throws SQLException {
         psGet.setLong(1, (long)id);

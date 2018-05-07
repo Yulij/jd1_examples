@@ -21,5 +21,6 @@ public class Operators {
         System.out.println(b1 + ">>" + ++i + " = " + (b1 >> i));
         System.out.println(b1 + "<<" + i + " = " + (b1 << i++));
         System.out.println(b1 + ">>>" + i + " = " + (b1 >>> i));
+        System.out.println(~00000011);
     }
 }
