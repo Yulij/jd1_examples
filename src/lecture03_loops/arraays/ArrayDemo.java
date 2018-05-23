@@ -10,17 +10,19 @@ import java.util.Random;
 public class ArrayDemo {
     public static void main(String[] args) {
 //        arrayDemo();
-        array2DimentionDemo();
+//        array2DimensionDemo();
+        User user1 = new User();
+        String year = user1.birthday;
     }
 
-    private static void array2DimentionDemo() {
+    private static void array2DimensionDemo() {
         int[][] array = {
-                {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}
+                {1, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 1, 1}
         };
         int sum = 0;
 
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
+            for (int j = 0; j < array[i].length; j++) {
                 sum += array[i][j];
             }
         }
@@ -47,5 +49,35 @@ public class ArrayDemo {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + "   ");
         }
+    }
+}
+
+class User {
+    String firstName = "No name";
+    private static int age = 0;
+    final String birthday;
+
+    User() {
+        birthday = "11-05-2018";
+    }
+
+    void calculateAge(int age) {
+
+    }
+
+    int getAge() {
+       return age;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

@@ -9,6 +9,7 @@ public enum Color {
     BLACK("Black color"),
     RED("Red color");
     private String color;
+
     static {
         System.out.println("Static");
     }
@@ -32,6 +33,6 @@ public enum Color {
             }
         }
 
-        throw new EnumConstantNotPresentException(Color.class, "No such enum");
+        throw new EnumConstantNotPresentException(Color.class, "No such enum with color = \"" + color + "\"");
     }
 }

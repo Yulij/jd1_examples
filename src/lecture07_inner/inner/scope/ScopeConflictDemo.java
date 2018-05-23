@@ -9,5 +9,6 @@ public class ScopeConflictDemo {
     public static void main(String[] args) {
         ScopeConflict sc = new ScopeConflict();
         ScopeConflict.Inner inner = sc.new Inner();
+        inner.foo();
     }
 }

@@ -7,25 +7,29 @@ package lecture04.constructors;
  */
 public class C {
     public static int c = 0;
-
-    private void start() {
-        System.out.println("Бомба ядрена запущена на ...");
-    }
-
-    public int publicA = 5;
+    public int a = 5;
 
     C() {
         System.out.println("Constructor C");
     }
 
     public C(int a) {
+        this.a = a;
         System.out.println("Constructor C");
+    }
+
+    C (String str) {
+        System.out.println(str);
+    }
+
+    void start() {
+        System.out.println("Бомба ядрена запущена на ...");
     }
 
     private void print() {
     }
 
     public void printPublicA() {
-        System.out.println(publicA);
+        System.out.println(a);
     }
 }
