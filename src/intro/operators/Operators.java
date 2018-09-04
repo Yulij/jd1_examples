@@ -14,13 +14,14 @@ public class Operators {
         a+=b1*b2;
         System.out.println("a+=b1*b2 ->" + a);
         int i = 0;
-        System.out.println(b1 + "|" + b2 + " = " + (b1 | b2));
-        System.out.println(b1 + "&" + b2 + " = " + (b1 & b2));
-        System.out.println(b1 + "^" + b2 + " = " + (b1 ^ b2));
-        System.out.println("~" + b2 + " = " + ~b2);
+        System.out.println(b1 + "|" + b2 + " = " + (b1 | b2));//1011
+        System.out.println(b1 + "&" + b2 + " = " + (b1 & b2));//1000
+        System.out.println(b1 + "^" + b2 + " = " + (b1 ^ b2));//0011
+        System.out.println("~" + b2 + " = " + ~b2);//1111 0110
         System.out.println(b1 + ">>" + ++i + " = " + (b1 >> i));
         System.out.println(b1 + "<<" + i + " = " + (b1 << i++));
         System.out.println(b1 + ">>>" + i + " = " + (b1 >>> i));
-        System.out.println(~00000011);
+        System.out.println(~0b00000011);
+        System.out.println((byte)0b11111100);
     }
 }
