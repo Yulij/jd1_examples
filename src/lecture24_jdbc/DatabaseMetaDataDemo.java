@@ -1,4 +1,4 @@
-package lecture24;
+package lecture24_jdbc;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import lecture24.db.ConnectionManager;
-import lecture24.db.DbManagerException;
+import lecture24_jdbc.db.ConnectionManager;
+import lecture24_jdbc.db.DbManagerException;
 
 /**
  * Class DatabaseMetaDataDemo
@@ -56,13 +56,16 @@ public class DatabaseMetaDataDemo {
 
     private static void getColumnsMetadata(List<String> tables) throws SQLException {
         ResultSet rs = null;
+        System.out.println("Table detail info:");
         for (String actualTable : tables) {
             rs = metadata.getColumns(null, null, actualTable, null);
             System.out.println(actualTable.toUpperCase());
+            System.out.printf("%s\t%s\t%s\t%n", "Column Name", "Type Name", "Column size");
             while (rs.next()) {
-                System.out.println(rs.getString("COLUMN_NAME") + " "
-                        + rs.getString("TYPE_NAME") + " "
-                        + rs.getString("COLUMN_SIZE"));
+                System.out.printf("%10s\t%9s\t%5s\t%n",
+                        rs.getString("COLUMN_NAME"),
+                        rs.getString("TYPE_NAME"),
+                        rs.getString("COLUMN_SIZE"));
             }
         }
     }
