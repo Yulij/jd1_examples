@@ -1,4 +1,4 @@
-package lecture24.entity;
+package lecture24_jdbc.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

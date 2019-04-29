@@ -1,5 +1,7 @@
-package lecture25.db;
+package lecture24_jdbc.db;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,13 +15,13 @@ import java.util.ResourceBundle;
 public class ConnectionManager {
     private static ResourceBundle rb = null;
     private static volatile boolean isDriverLoaded = false;
+    static ThreadLocal<Connection> connection = new ThreadLocal<>();
     private static final String URL;
     private static final String USER;
     private static final String PASSWORD;
-    private static Connection con;
 
     static {
-        ResourceBundle rb = ResourceBundle.getBundle("lecture25/db");
+        ResourceBundle rb = ResourceBundle.getBundle("lecture24_jdbc/db");
         if (rb == null) {
             URL = "UNDEFINED";
             USER = "UNDEFINED";
@@ -44,13 +46,29 @@ public class ConnectionManager {
         }
 
         try {
-            if (con == null) {
-
-                con = DriverManager.getConnection(URL, USER, PASSWORD);
+            if (connection.get() == null) {
+                connection.set(DriverManager.getConnection(URL, USER, PASSWORD));
             }
-            return con;
+             return connection.get();
         } catch (SQLException e) {
             throw new DbManagerException("Ошибка получения соединения " +  e.getMessage());
+        }
+    }
+
+    public static void main(String argv[]) {
+        try {
+            String line;
+            Process p = Runtime.getRuntime().exec("mysql -u root -pyuli db_shop < C:/Users/Asus/Dropbox/PVT private/JD1/Projects/LectionExamples/resources/lecture24_jdbc/scripts.sql");
+            BufferedReader input =
+                    new BufferedReader
+                            (new InputStreamReader(p.getInputStream()));
+            while ((line = input.readLine()) != null) {
+                System.out.println(line);
+            }
+            input.close();
+        }
+        catch (Exception err) {
+            err.printStackTrace();
         }
     }
 }

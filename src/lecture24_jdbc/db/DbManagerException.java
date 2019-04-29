@@ -1,4 +1,4 @@
-package lecture24.db;
+package lecture24_jdbc.db;
 
 /**
  * Class DbManagerException

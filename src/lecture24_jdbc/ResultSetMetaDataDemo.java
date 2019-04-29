@@ -1,4 +1,4 @@
-package lecture24;
+package lecture24_jdbc;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -6,8 +6,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import lecture24.db.ConnectionManager;
-import lecture24.db.DbManagerException;
+import lecture24_jdbc.db.ConnectionManager;
+import lecture24_jdbc.db.DbManagerException;
 
 
 /**
@@ -25,7 +25,7 @@ public class ResultSetMetaDataDemo {
             rs = st.executeQuery("SELECT ITEM_ID, SUPPLIER, MODEL, PRICE FROM ITEM");
             System.out.printf("Items:%nId\tSupplier\t\tModel\t\tPrice %n");
             while (rs.next()) {
-                System.out.printf("%-4d %-10s %-15s %-6.2f%n", rs.getLong(1), rs.getString(2), rs.getString(3), rs.getDouble(4));
+                System.out.printf("%-4d %-10s %-15s %-6.2f%n", rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4));
             }
             ResultSetMetaData md = rs.getMetaData();
             System.out.println("Total row count: " + md.getColumnCount());

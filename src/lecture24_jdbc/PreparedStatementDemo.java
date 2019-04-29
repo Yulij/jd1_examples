@@ -1,12 +1,12 @@
-package lecture24;
+package lecture24_jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import lecture24.db.ConnectionManager;
-import lecture24.db.DbManagerException;
-import lecture24.entity.Item;
+import lecture24_jdbc.db.ConnectionManager;
+import lecture24_jdbc.db.DbManagerException;
+import lecture24_jdbc.entity.Item;
 
 /**
  * Class PreparedStatementDemo
@@ -42,6 +42,8 @@ public class PreparedStatementDemo {
         try {
             compilePreparedStatement(insertItemQuery);
             int i = insertItem(ps, new Item("Makita", "HR 2470", 242.15));
+            System.out.println(i);
+            i = insertItem(ps, new Item("Makita", "HR 2455", 542.99));
             System.out.println(i);
         } catch (SQLException e) {
             System.out.println("Проблемы с добавлением данных в таблицу Item");

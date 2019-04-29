@@ -1,12 +1,12 @@
-package lecture24;
+package lecture24_jdbc;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Types;
 
-import lecture24.db.ConnectionManager;
-import lecture24.db.DbManagerException;
+import lecture24_jdbc.db.ConnectionManager;
+import lecture24_jdbc.db.DbManagerException;
 
 
 /**
@@ -15,6 +15,7 @@ import lecture24.db.DbManagerException;
  * Created by yslabko on 07/02/2017.
  */
 public class CallableStatementDemo {
+    public static final int OUTPUT_PARAMETER_INDEX = 2;
     static CallableStatement cs;
     static Connection connection;
     private static final String insertItemQuery = "{call getItemPrice(?,?)}";
@@ -35,9 +36,9 @@ public class CallableStatementDemo {
     static Double getItemPrice(long id) throws SQLException {
         cs.setLong(1, id);
 		//регистрация выходящего параметра
-		cs.registerOutParameter(2, Types.DECIMAL);
+		cs.registerOutParameter(OUTPUT_PARAMETER_INDEX, Types.FLOAT);
 		cs.execute();
-		return cs.getDouble(2);
+		return cs.getDouble(OUTPUT_PARAMETER_INDEX);
     }
 
     public static void main(String[] args) {
