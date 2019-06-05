@@ -1,20 +1,39 @@
 package lecture10_collections.set.cars;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.*;
+
+import java.util.Objects;
 
 /**
  * Class OrderedCar
  *
  * Created by yslabko on 12/15/2017.
  */
+@Getter
 @AllArgsConstructor
-public class OrderedCar implements Comparable<OrderedCar> {
-    @Getter
+public class OrderedCar implements Comparable<Object> {
     private String model = "UNKNOWN";
+    private int year = 1895;
+
+    public OrderedCar(String model) {
+        this.model = model;
+    }
 
     @Override
-    public int compareTo(OrderedCar o) {
-        return model.length() - o.getModel().length();
+    public int compareTo(Object o) {
+        return year - ((OrderedCar)o).year;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderedCar that = (OrderedCar) o;
+        return year == that.year;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(model);
     }
 }

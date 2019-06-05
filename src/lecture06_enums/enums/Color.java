@@ -7,7 +7,10 @@ package lecture06_enums.enums;
  */
 public enum Color {
     BLACK("Black color"),
-    RED("Red color");
+    DARK_BLUE("Dark blue"),
+    RED("Red color"),
+    UNDEFINED("Undefined");
+
     private String color;
 
     static {
@@ -18,6 +21,7 @@ public enum Color {
         this.color = color;
         System.out.println("Constructor");
     }
+
     {
         System.out.println("Logic");
     }
@@ -33,6 +37,7 @@ public enum Color {
             }
         }
 
-        throw new EnumConstantNotPresentException(Color.class, "No such enum with color = \"" + color + "\"");
+        return UNDEFINED;
+//        throw new EnumConstantNotPresentException(Color.class, "No such enum with color = \"" + color + "\"");
     }
 }

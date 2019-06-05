@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class BoxDemo {
 
     public static void main(String[] args) {
-//        blackBoxDemo();
-        genericBoxDemo();
+        blackBoxDemo();
+//        genericBoxDemo();
         Class clazz;
     }
 
@@ -23,13 +23,16 @@ public class BoxDemo {
     }
 
     private static void genericBoxDemo() {
-        GenericBox<Number> box = new GenericBox<>(1.0);
-        Integer item = (Integer) box.getItem();
+        GenericBox<Integer> box = new GenericBox<>(1);
+        Integer item = box.getItem();
         // seems it was one. let's use it in calculation
 //        System.out.println((int)item + 10);
         System.out.println(Integer.valueOf(item) + 10);
         box.info();
-        GenericBox<Byte> stringBox = new GenericBox<>((byte)1);
-        box.compare(new ArrayList<>());
+
+        GenericBox<String> stringBox = new GenericBox<>("Text");
+        stringBox.getInfo(1000000D);
+
+        System.out.println(box.getHash(new GenericBox<>(new BlackBox("123"))));
     }
 }

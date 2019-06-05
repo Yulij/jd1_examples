@@ -1,12 +1,15 @@
 package lecture08_generics_annotations.reflection;
 
+import lecture08_generics_annotations.annotations.Fio;
 import lecture08_generics_annotations.annotations.Transactional;
+import lecture08_generics_annotations.generic.GenericBox;
 
 /**
  * Class AnalyzerDemo
  *
  * Created by yslabko on 05/23/2018.
  */
+@Fio
 public class AnalyzerDemo {
     public static void main(String[] args) {
         ClassAnalyzer.analyzeClass(AnalyzerDemo.class);

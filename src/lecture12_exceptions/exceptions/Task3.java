@@ -1,5 +1,7 @@
 package lecture12_exceptions.exceptions;
 
+import java.io.IOException;
+
 public class Task3 {
 
     public static void main(String[] args) {
@@ -16,6 +18,11 @@ public class Task3 {
     public static void throw1() {
         try {
             throw2();
+            try {
+                throw new IOException();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         } catch (IllegalArgumentException e) {
             throw new MyException("It's not my fault!", e);
         }

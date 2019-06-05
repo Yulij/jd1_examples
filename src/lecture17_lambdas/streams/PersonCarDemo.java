@@ -15,7 +15,7 @@ import lombok.Getter;
  */
 public class PersonCarDemo {
     public static void main(String[] args) {
-        personDemo();
+//        personDemo();
         collectDemo();
     }
 
@@ -31,7 +31,6 @@ public class PersonCarDemo {
                 .sorted(new PersonAgeComparator())
                 .forEach((Person p) -> {
                     System.out.println(p.getClass() + " " + p.hashCode() + " " + p);
-                    return;
                 });
         //вывод не измененного списка
         list.forEach(System.out::println);
@@ -68,10 +67,10 @@ public class PersonCarDemo {
                 Arrays.asList(
                         new Car("A6RS", 460),
                         new Car("M6", 460),
-                        new Car("Corvet", 500),
+                        new Car("Corvet", 460),
                         new Car("GTR", 480));
 
-        IntSummaryStatistics hpSum = cars.parallelStream()
+        IntSummaryStatistics hpSum = cars.stream()
                 .collect(Collectors.summarizingInt(car->car.hp));
         System.out.println("Hp summary: " + hpSum);
         StreamsDemo.separator();

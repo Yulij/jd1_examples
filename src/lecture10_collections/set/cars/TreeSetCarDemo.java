@@ -12,6 +12,7 @@ public class TreeSetCarDemo {
         TreeSet<Car> cars = new TreeSet<>();
         cars.add(new Car("BMW"));
         cars.add(new Car("Audi"));
+        cars.add(new Car("Audi"));
         cars.lower(new Car("Porsche"));
 
         for (Car s : cars) {

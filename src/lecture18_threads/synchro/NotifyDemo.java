@@ -30,19 +30,15 @@ public class NotifyDemo implements Runnable {
         }
     }
 
-    public static void main(String s[]) {
+    public static void main(String s[]) throws InterruptedException {
         NotifyDemo w1 = new NotifyDemo(1);
         new Thread(w1).start();
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-        }
+        Thread.sleep(100);
+
         NotifyDemo w2 = new NotifyDemo(2);
         new Thread(w2).start();
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-        }
+        Thread.sleep(100);
+
         NotifyDemo w3 = new NotifyDemo(3);
         new Thread(w3).start();
     }

@@ -16,18 +16,21 @@ public class StreamsDemo {
             System.out.println(strings.get(i));
         }
         separator();
+
         for (String string : strings) {
             System.out.println(string);
         }
         separator();
-        strings.sort((s1, s2) -> s1.compareTo(s2));
         strings.forEach(string -> System.out.println(string));
+
+        strings.sort((s1, s2) -> s1.compareTo(s2));
         separator();
         strings.sort(String::compareTo);
         strings.forEach(System.out::println);//передача метода по ссылке
         strings.forEach(string -> new String(string));//вызов конструктора с параметром
         strings.forEach(String::new);// вызов базового конструктора
         // отбираем первое четное больше 3 и возвращаем удвоенное значение
+
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 10);
         Integer integer = numbers.stream()
                 .filter(element -> element % 2 == 0)
@@ -114,7 +117,8 @@ public class StreamsDemo {
 //                })
 //                .forEach(s -> System.out.println("forEach: " + s));
 
-        Stream.of("dd2", "aa2", "bb1", "bb3", "cc4")
+        Stream.of("dd2", "aa2", "bb1", "bb3", "ac4")
+                .filter(StreamsDemo::isStartWithLowerA)
                 .sorted((s1, s2) -> {
                     System.out.printf("sort: %s; %s\n", s1, s2);
                     return s1.compareTo(s2);
@@ -123,7 +127,6 @@ public class StreamsDemo {
 //                    System.out.println("filter: " + s);
 //                    return s.startsWith("a");
 //                })
-                .filter(StreamsDemo::isStartWithA)
                 .map(s -> {
                     System.out.println("map: " + s);
                     return s.toUpperCase();
@@ -131,7 +134,7 @@ public class StreamsDemo {
                 .forEach(s -> System.out.println("forEach: " + s));
     }
 
-    private static boolean isStartWithA(String s) {
+    private static boolean isStartWithLowerA(String s) {
         System.out.println("filter: " + s);
         return s.startsWith("a");
     }

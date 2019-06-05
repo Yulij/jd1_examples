@@ -17,18 +17,19 @@ public class RegexpDemo {
 //        valid = validStart("  hello");
 //        testBoundaryMatches();
 //        testLookAheadPassword();
+//        testMatcherGroup();
 //        testLookAheadUnit();
-        testNegativeLookAheadUnit();
+//        testNegativeLookAheadUnit();
 //        testLookBehindUnit();
-//        testNegativeLookBehindUnit();
+        testNegativeLookBehindUnit();
 //        testSpeedOfStartEndBoundaries();
     }
 
     private static void testMatcherGroup() {
-        Pattern pattern = Pattern.compile("www\\.(\\w+)\\.by");
+        Pattern pattern = Pattern.compile("www\\.(\\w+)\\.(by)");
         Matcher matcher = pattern.matcher("   www.tut.by    ");
         matcher.find();
-        System.out.println(matcher.group(1));
+        System.out.println(matcher.group());
     }
 
     private static void testBoundaryMatches() {
@@ -93,8 +94,8 @@ public class RegexpDemo {
      */
     private static void testNegativeLookBehindUnit() {
         String str = "Круто \n Ты лучший \n\n <tag>\n";
-//        System.out.println(str.replaceAll("(?<!>)\\n", "<br/>"));
-        System.out.println(str.replaceAll("([^>])\\n", "<br/>"));
+        System.out.println(str.replaceAll("(?<!>)\\n", "<br/>"));
+//        System.out.println(str.replaceAll("([^>])\\n", "<br/>"));
     }
 
     private static void testG() {

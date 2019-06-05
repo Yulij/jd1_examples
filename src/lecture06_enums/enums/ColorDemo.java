@@ -7,8 +7,8 @@ package lecture06_enums.enums;
  */
 public class ColorDemo {
     public static void main(String[] args) {
-
         Color red = Color.RED;
+        System.out.println(red.name());
         Color color = Color.getByColor("Blue color");
         System.out.println(color);
     }

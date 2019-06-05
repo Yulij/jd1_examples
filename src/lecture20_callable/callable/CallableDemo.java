@@ -12,7 +12,8 @@ public class CallableDemo implements Callable<Integer> {
         for (int i = 0; i < 100; i+=3) {
             sum+=i;
         }
-        TimeUnit.SECONDS.sleep(1);
+        System.out.println("Additional thread: sum= " + sum);
+        TimeUnit.SECONDS.sleep(3);
         return sum;
     }
 
@@ -22,6 +23,7 @@ public class CallableDemo implements Callable<Integer> {
         t.start();
 
         Thread.sleep(1500);
+        System.out.println(fTask.get());
         System.out.println("isDone() " + fTask.isDone());
         System.out.println("Сумма равна " + fTask.get(1, TimeUnit.SECONDS));
 //        fTask.get(2l, TimeUnit.SECONDS);

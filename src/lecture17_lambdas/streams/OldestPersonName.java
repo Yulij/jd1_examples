@@ -3,6 +3,7 @@ package lecture17_lambdas.streams;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class OldestPersonName {
 

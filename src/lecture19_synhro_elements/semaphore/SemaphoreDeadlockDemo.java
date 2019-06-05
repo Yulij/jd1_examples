@@ -32,7 +32,7 @@ public class SemaphoreDeadlockDemo {
                 Thread t = Thread.currentThread();
                 first.acquire();
                 System.out.println(t + " acquired " + first);
-//                Thread.sleep(400); // deadlock
+                Thread.sleep(400); // deadlock
                 second.acquire();
                 System.out.println(t + " acquired " + second);
                 second.release();

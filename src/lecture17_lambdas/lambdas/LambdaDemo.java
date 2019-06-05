@@ -3,6 +3,7 @@ package lecture17_lambdas.lambdas;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,14 +12,15 @@ public class LambdaDemo {
     public static final String SEPARATOR = "------------------";
 
     public static void main(String[] args) {
-        List<Integer> list = Arrays.asList(25, 40, 999, 555);
-        printByLambda(list);
-        printByLambdaWithParameter(list);
-        printByMethodReferences(list);
+        List<Integer> list = Stream.of(25, 40, 999, 555).collect(Collectors.toList());
+//        List<Integer> list = Arrays.asList(25, 40, 999, 555);
+//        printByLambda(list);
+//        printByLambdaWithParameter(list);
+//        printByMethodReferences(list);
 
         Integer[] array = list.toArray(new Integer[list.size()]);
 
-        Arrays.sort(array, (a, b)->Integer.compare(b,a));
+        Arrays.sort(array, (element1, element2)->Integer.compare(element2, element1));
 
         printByLambda(Arrays.stream(array).collect(Collectors.toList()));
     }
@@ -30,6 +32,7 @@ public class LambdaDemo {
 
     private static void printByLambdaWithParameter(List<Integer> list) {
         list.forEach((Integer i)->{
+            System.out.print(i);
             System.out.println(i);
         });
         System.out.println(SEPARATOR);

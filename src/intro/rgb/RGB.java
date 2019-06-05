@@ -9,7 +9,6 @@ public class RGB {
     public static void main(String[] args) {
         System.out.println(((byte)0b11111101));
         byte rgb[] = new byte[]{(byte)0b11111111, (byte)0b10001000, (byte) 0b00000001};
-        System.out.println(rgb);
         for (byte b : rgb) {
             System.out.println(getHexString(b));
         }

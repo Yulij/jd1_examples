@@ -7,7 +7,7 @@ import lecture21_design_patterns.design.command.commands.TransferMoneyCommand;
 import lecture21_design_patterns.design.command.commands.WithdrawMoneyCommand;
 
 public class AccountManager {
-    private Deque<Command> commands = new LinkedList<Command>();
+    private Deque<Command> commands = new LinkedList<>();
 
     public void transferMoney(Account accountFrom, Account accountTo, int amount) {
         new TransferMoneyCommand(accountFrom, accountTo, amount).execute();

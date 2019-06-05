@@ -21,4 +21,24 @@ public class Student implements Cloneable {
                     "отсутствует Cloneable!");
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Student student = (Student) o;
+
+        if (id != student.id) return false;
+        if (mark != null ? !mark.equals(student.mark) : student.mark != null) return false;
+        return lm != null ? lm.equals(student.lm) : student.lm == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (mark != null ? mark.hashCode() : 0);
+        result = 31 * result + (lm != null ? lm.hashCode() : 0);
+        return result;
+    }
 }

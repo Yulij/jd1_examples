@@ -10,5 +10,7 @@ public class OOPDemo {
         B b = new B();
         A ab = new B();
         ab.print();
+        C c = new C();
+        c.print();
     }
 }

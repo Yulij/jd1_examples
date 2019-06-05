@@ -1,12 +1,21 @@
 package lecture20_callable.volatiles;
 
+import java.lang.reflect.Field;
+import java.util.Arrays;
+
+import lombok.Data;
+
 /**
  * Created by yslabko 23.07.2017.
  */
 public class VolatileDemo {
     private volatile static boolean running = true;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IllegalAccessException {
+        demo();
+    }
+
+    private static void demo() throws InterruptedException {
         Thread runner = new Thread(() -> {
             while(running) {
                 System.out.println("Hello");
@@ -25,5 +34,4 @@ public class VolatileDemo {
         runner.join();
         stopper.join();
     }
-
 }

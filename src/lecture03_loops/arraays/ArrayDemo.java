@@ -10,19 +10,19 @@ import java.util.Random;
 public class ArrayDemo {
     public static void main(String[] args) {
 //        arrayDemo();
-//        array2DimensionDemo();
+        array2DimensionDemo();
         User user1 = new User();
         String year = user1.birthday;
     }
 
     private static void array2DimensionDemo() {
         int[][] array = {
-                {1, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 1, 1, 1}
+                {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}
         };
         int sum = 0;
 
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
+            for (int j = 0; j < array[1].length; j++) {
                 sum += array[i][j];
             }
         }

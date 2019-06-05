@@ -10,12 +10,13 @@ import java.util.TreeSet;
 public class TreeSetOrderedCarDemo {
     public static void main(String[] args) {
         TreeSet<OrderedCar> cars = new TreeSet<>();
-        cars.add(new OrderedCar("BMW"));
+        cars.add(new OrderedCar("BMW", 1900));
+        cars.add(new OrderedCar("Audi", 2000));
         cars.add(new OrderedCar("Audi"));
-        cars.add(new OrderedCar("Porsche"));
+        cars.add(new OrderedCar("Porsche", 38654));
 
         for (OrderedCar car : cars) {
-            System.out.println(car);
+            System.out.println(car.getYear());
         }
     }
 }

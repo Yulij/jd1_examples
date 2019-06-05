@@ -8,17 +8,17 @@ import lombok.Data;
 @Data
 //@AllArgsConstructor
 public class Car implements Serializable {
-    public static final long serialVersionUID = 1;
 
+    private static final long serialVersionUID = -2813913617715203914L;
     private String id;
+    private Integer idNew;
     private String brand;
-    private double price;
     private transient Date productionDate;
 
     public Car(String id, String brand, double price, Date productionDate) {
         this.id = id;
         this.brand = brand;
-        this.price = price;
+//        this.price = price;
         this.productionDate = productionDate;
     }
 }

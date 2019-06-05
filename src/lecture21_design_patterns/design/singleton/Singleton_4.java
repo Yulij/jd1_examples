@@ -8,16 +8,21 @@ package lecture21_design_patterns.design.singleton;
 public class Singleton_4 {
     private static volatile Singleton_4 instance;
 
+    private Singleton_4() {
+    }
+
     public static Singleton_4 getInstance() {
         Singleton_4 localInstance = instance;
+
         if (localInstance == null) {
             synchronized (Singleton_4.class) {
                 localInstance = instance;
                 if (localInstance == null) {
-                    instance = localInstance = new Singleton_4();
+                    localInstance = instance = new Singleton_4();
                 }
             }
         }
+
         return localInstance;
     }
 }

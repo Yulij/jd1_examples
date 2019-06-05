@@ -6,8 +6,8 @@ package lecture18_threads.synchro;
 public class DeadlockDemo {
 
     // Два объекта-ресурса
-    public final static Object one=new Object(),
-            two=new Object();
+    public final static Object one=new Object();
+    public final static Object two=new Object();
 
     public static void main(String s[]) {
 
@@ -23,7 +23,7 @@ public class DeadlockDemo {
                     } catch (InterruptedException e) {
 
                     }
-//                    Thread.yield();
+                    Thread.yield();
                     // Блокировка второго объекта
                     synchronized (two) {
                         System.out.println("Success Thread 1!");
@@ -35,7 +35,7 @@ public class DeadlockDemo {
             public void run() {
                 // Блокировка второго объекта
                 synchronized(two) {
-//                    Thread.yield();
+                    Thread.yield();
                     try {
                         Thread.sleep(10);
                     } catch (InterruptedException e) {
@@ -53,5 +53,12 @@ public class DeadlockDemo {
         t1.start();
         t2.start();
         System.out.println("Dead lock!!!!");
+        try {
+            Thread.sleep(2000);
+            t1.interrupt();
+            t2.interrupt();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

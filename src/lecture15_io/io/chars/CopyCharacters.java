@@ -21,6 +21,5 @@ public class CopyCharacters {
         if (out != null) {
             out.close();
         }
-
     }
 }

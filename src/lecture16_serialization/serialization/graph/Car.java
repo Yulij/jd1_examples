@@ -22,11 +22,11 @@ public class Car implements Serializable {
     }
 
 
-    private void writeObject(ObjectOutputStream objectOutputStream) throws IOException {
-        objectOutputStream.defaultWriteObject();
-    }
-
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        in.defaultReadObject();
-    }
+//    private void writeObject(ObjectOutputStream objectOutputStream) throws IOException {
+//        objectOutputStream.defaultWriteObject();
+//    }
+//
+//    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+//        in.defaultReadObject();
+//    }
 }

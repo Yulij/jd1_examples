@@ -18,7 +18,8 @@ public class WriteStringDemo {
              OutputStreamWriter osw = new OutputStreamWriter(fos);
              BufferedWriter bw = new BufferedWriter(osw);
              InputStreamReader is = new InputStreamReader(System.in);
-             BufferedReader bis = new BufferedReader(is);) {
+             BufferedReader bis = new BufferedReader(is)) {
+
             System.out.println("Введите Ваше имя и нажмите <Enter>:");
             String name = bis.readLine();
             bw.write("Привет, " + name);

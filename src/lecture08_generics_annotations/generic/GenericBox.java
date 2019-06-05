@@ -18,6 +18,11 @@ public class GenericBox <T> {
         return item;
     }
 
+    public <Type extends Number> Type getInfo(Type t) {
+        System.out.println("item is a method parameter = " + t + " as Byte:" + t.byteValue());
+        return t;
+    }
+
     public void setItem(T item) {
         this.item = item;
     }
@@ -30,8 +35,7 @@ public class GenericBox <T> {
         System.out.println(text);
     }
 
-    public <T1> void compare(T1 t) {
-        t.equals(item);
-        Date date = new Date(2018, 5, 23);
+    public int getHash(GenericBox<?> box) {
+        return box.hashCode();
     }
 }

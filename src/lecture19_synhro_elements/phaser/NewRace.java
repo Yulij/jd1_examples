@@ -44,6 +44,7 @@ public class NewRace {
                 System.out.printf("Автомобиль №%d подъехал к стартовой прямой.\n", carNumber);
                 START.arriveAndDeregister();
                 START.awaitAdvance(0);
+                START.arrive();
                 Thread.sleep(trackLength / carSpeed);
                 System.out.printf("Автомобиль №%d финишировал! Средняя скорость: %d\n", carNumber, carSpeed);
             } catch (InterruptedException e) {

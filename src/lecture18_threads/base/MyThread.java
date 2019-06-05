@@ -22,8 +22,13 @@ public class MyThread extends Thread {
 
     public static void main(String[] args) throws InterruptedException {
         MyThread t = new MyThread();
+        Thread thread = new Thread(() -> {
+            System.out.println("New Thread:" + Thread.currentThread().getName());
+        });
+//        thread.start();
         t.start();
-        t.join();
+        t.interrupt();
+//        t.join();
         System.out.println("Main thread.");
     }
 }

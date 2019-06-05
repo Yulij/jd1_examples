@@ -2,6 +2,7 @@ package lecture17_lambdas.streams;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class IntegerConcatenation {
 
@@ -14,7 +15,8 @@ public class IntegerConcatenation {
 
         String result = list.stream()
                 .map(number -> number.toString())
-                .reduce("", (base, element) -> base + element);
+//                .reduce("", (base, element) -> base + element);
+                .collect(Collectors.joining());
         System.out.println(result);
     }
 }

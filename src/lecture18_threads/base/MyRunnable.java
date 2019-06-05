@@ -17,5 +17,13 @@ public class MyRunnable implements Runnable {
         Runnable r = new MyRunnable();
         Thread t = new Thread(r);
         t.start();
+
+        new Thread(()->{
+            long sum=0;
+            for (int i=0; i<1000; i++) {
+                sum+=i;
+            }
+            System.out.println("Sum: " + sum);
+        });
     }
 }

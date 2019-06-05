@@ -9,14 +9,20 @@ import java.util.HashSet;
  */
 public class HashSetOrderedCarDemo {
     public static void main(String[] args) {
-        System.out.println(new OrderedCar("sfg").hashCode());
         HashSet<OrderedCar> cars = new HashSet<>();
         cars.add(new OrderedCar("BMW"));
         cars.add(new OrderedCar("Audi"));
         cars.add(new OrderedCar("Porsche"));
 
         for (OrderedCar car : cars) {
-            System.out.println(car);
+            System.out.printf("Car: %25s hashCode:%d%n",car, car.hashCode());
         }
+    }
+    HashSet consolidationIntHashSet(HashSet<Integer> hs1,HashSet<Integer> hs2)
+    {
+        HashSet<Integer> int3 = new HashSet<>();
+        int3.addAll(hs1);
+        int3.addAll(hs2);
+        return int3;
     }
 }

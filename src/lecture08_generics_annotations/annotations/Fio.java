@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface Fio {
-    String firstName() default "";
-    String lastName() default "";
+    String firstName() default "Yuli";
+    String lastName() default "Slabko";
     String fathersName() default "";
 }

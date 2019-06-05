@@ -20,7 +20,7 @@ public class Homer implements Runnable {
         } catch (InterruptedException ie) {}
     }
 
-    //Гомер за насыщается 10 печеньками
+    //Гомер насыщается 10 печеньками
     public void run() {
         for (int i = 1 ; i <= 10 ; i++) eat();
     }

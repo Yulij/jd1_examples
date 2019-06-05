@@ -6,7 +6,7 @@ package lecture18_threads.demon;
 public class DaemonDemo extends Thread {
     public DaemonDemo() {
         super("Daemon demo thread");
-//        setDaemon(true);
+        setDaemon(true);
         start();
     }
 

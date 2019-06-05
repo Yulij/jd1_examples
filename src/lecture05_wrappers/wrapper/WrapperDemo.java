@@ -7,7 +7,7 @@ package lecture05_wrappers.wrapper;
  */
 public class WrapperDemo {
     public static void main(String[] args) {
-        int i = -129;
+        int i = 127;
         Integer oa = i; //создание объекта+упаковка
         Integer ob = i;
         System.out.println("oa==i " + (oa == i));// true
@@ -17,10 +17,10 @@ public class WrapperDemo {
                 + ob.equals(i)
                 + oa.equals(ob));// true
 
-        Number [] nums = {10, 10.0f, 10L};
-        Long l = nums[1].longValue();
+        Number [] nums = {10, 10.5f, 10L};
+        Long l = (long)nums[1];
         System.out.println(l);
-//        numberDemo();
+        numberDemo();
     }
 
     private static void numberDemo() {

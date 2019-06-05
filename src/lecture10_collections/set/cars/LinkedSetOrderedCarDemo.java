@@ -11,6 +11,9 @@ public class LinkedSetOrderedCarDemo {
     public static void main(String[] args) {
         LinkedHashSet<OrderedCar> cars = new LinkedHashSet<>();
         cars.add(new OrderedCar("BMW"));
+        cars.add(new OrderedCar("BMW"));
+        cars.add(new OrderedCar("Audi"));
+        cars.add(new OrderedCar("Porsche"));
         cars.add(new OrderedCar("Audi"));
         cars.add(new OrderedCar("Porsche"));
 

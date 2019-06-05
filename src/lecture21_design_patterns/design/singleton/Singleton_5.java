@@ -7,6 +7,8 @@ package lecture21_design_patterns.design.singleton;
  */
 public class Singleton_5 {
 
+    private Singleton_5(){}
+
     public static class SingletonHolder {
         public static final Singleton_5 HOLDER_INSTANCE = new Singleton_5();
     }
