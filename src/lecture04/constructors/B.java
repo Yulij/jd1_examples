@@ -6,6 +6,8 @@ package lecture04.constructors;
  * Created by yslabko on 12/01/2017.
  */
 public class B extends A {
+    B () {}
+
     @Override
     public void print() {
 
