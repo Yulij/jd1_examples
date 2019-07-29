@@ -14,7 +14,7 @@ public class Car implements Serializable {
     private String newBrand;
     private static String price = "59 999$";
     private transient Date productionDate;
-//    private transient Company company;
+    private transient Company company;
 
     @Override
     public String toString() {

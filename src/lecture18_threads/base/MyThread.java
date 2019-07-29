@@ -25,7 +25,8 @@ public class MyThread extends Thread {
         Thread thread = new Thread(() -> {
             System.out.println("New Thread:" + Thread.currentThread().getName());
         });
-//        thread.start();
+        thread.start();
+//        t.run();
         t.start();
         t.interrupt();
 //        t.join();

@@ -15,8 +15,8 @@ import lombok.Getter;
  */
 public class PersonCarDemo {
     public static void main(String[] args) {
-//        personDemo();
-        collectDemo();
+        personDemo();
+//        collectDemo();
     }
 
     private static void personDemo() {
@@ -33,6 +33,7 @@ public class PersonCarDemo {
                     System.out.println(p.getClass() + " " + p.hashCode() + " " + p);
                 });
         //вывод не измененного списка
+        list.forEach((element) -> System.out.println(element));
         list.forEach(System.out::println);
 
         StreamsDemo.separator();

@@ -1,6 +1,7 @@
 package lecture17_lambdas.streams;
 
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -58,8 +59,7 @@ public class StreamsDemo {
         //
         integer = numbers
                 .stream()
-                .filter(element -> element % 2 == 0)
-                .filter(element -> element > 3)
+                .filter(filterCondition())
                 .map(element -> element * 2)
                 .reduce(1, (base, element) -> base * element);
         System.out.println(integer);
@@ -75,6 +75,10 @@ public class StreamsDemo {
         System.out.println(integer);
         separator();
         streamDemo();
+    }
+
+    public static Predicate<Integer> filterCondition() {
+        return element -> element % 2 == 0 && element > 3;
     }
 
     static void separator() {

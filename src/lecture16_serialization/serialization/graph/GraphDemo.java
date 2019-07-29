@@ -28,7 +28,7 @@ public class GraphDemo {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
             objectOutputStream.writeObject(dragResults1);
             dragResults1.setId(3);
-//            objectOutputStream.reset();
+            objectOutputStream.reset();
             objectOutputStream.writeObject(dragResults2);
             objectOutputStream.writeObject(dragResults1);
             objectOutputStream.close();

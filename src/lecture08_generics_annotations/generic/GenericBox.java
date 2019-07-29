@@ -1,7 +1,5 @@
 package lecture08_generics_annotations.generic;
 
-import java.util.Date;
-
 /**
  * Class GenericBox
  *
@@ -16,6 +14,13 @@ public class GenericBox <T> {
 
     public T getItem() {
         return item;
+    }
+
+    public T printObj(T t, GenericBox<? extends Number> t2) {
+        t2.getItem().intValue();
+        System.out.println(" T:" + t2.getItem().doubleValue());
+
+        return t;
     }
 
     public <Type extends Number> Type getInfo(Type t) {

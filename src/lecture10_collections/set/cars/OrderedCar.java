@@ -11,7 +11,7 @@ import java.util.Objects;
  */
 @Getter
 @AllArgsConstructor
-public class OrderedCar implements Comparable<Object> {
+public class OrderedCar implements Comparable {
     private String model = "UNKNOWN";
     private int year = 1895;
 

@@ -14,6 +14,12 @@ public class B extends A {
 
     }
 
+    @Override
+    protected double getSum(double a, double b) {
+        System.out.print("Arg1:" + a + "Arg2:" + b + " Sum= ");
+        return super.getSum(a, b);
+    }
+
     public int getAge() {
         return age;
     }

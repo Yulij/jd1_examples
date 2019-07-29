@@ -47,7 +47,7 @@ public class DateTimeApiTest {
                 = now.format(DateTimeFormatter.ofPattern("dd--MM--yyyy"));
         System.out.println(formattedString);
 
-        String dateAsString = "20--06-+1990";
+        String dateAsString = "20--06--1990";
         LocalDate parsedDate
                 = LocalDate.parse(dateAsString, DateTimeFormatter.ofPattern("dd--MM-+yyyy"));
         System.out.println(parsedDate.getYear());
@@ -120,7 +120,7 @@ public class DateTimeApiTest {
         System.out.println(between.getSeconds());
 
         LocalDate birthday = LocalDate.of(2032, Month.JULY, 6);
-        Period period = Period.between(birthday, today);
+        Period period = Period.between(today, birthday);
         boolean supported = today.isSupported(ChronoUnit.HOURS);
         System.out.println(supported);
         System.out.println("Лет: " + period.getYears());

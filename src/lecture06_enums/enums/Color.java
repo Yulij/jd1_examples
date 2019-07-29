@@ -7,6 +7,7 @@ package lecture06_enums.enums;
  */
 public enum Color {
     BLACK("Black color"),
+    PINK("Pink color"),
     DARK_BLUE("Dark blue"),
     RED("Red color"),
     UNDEFINED("Undefined");

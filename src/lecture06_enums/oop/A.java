@@ -15,6 +15,10 @@ public class A {
     }
 
 
+    protected double getSum(double a, double b) {
+        return a+b;
+    }
+
     public int getCount() {
         modifyCount();
         return count;

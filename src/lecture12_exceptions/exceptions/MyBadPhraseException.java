@@ -11,6 +11,11 @@ public class MyBadPhraseException extends Exception {
         this.word = word;
     }
 
+    public MyBadPhraseException(String message, Throwable cause, String word) {
+        super(message, cause);
+        this.word = word;
+    }
+
     public String getWord() {
         return word;
     }

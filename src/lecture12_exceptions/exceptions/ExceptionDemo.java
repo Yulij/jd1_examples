@@ -11,12 +11,13 @@ public class ExceptionDemo {
         try {
             say(word);
         } catch (MyBadPhraseException e) {
-//            e.printStackTrace();
+            e.printStackTrace();
             LOGGER.info("Start exception handling ---------------");
             LOGGER.error("Bad word:" + e.getWord(), e);
             LOGGER.info("End exception handling ---------------");
-//            System.out.println("Bad word:" + e.getWord());
+            System.out.println(e.getMessage());
         }
+
     }
 
     private static void say(String word) throws MyBadPhraseException {

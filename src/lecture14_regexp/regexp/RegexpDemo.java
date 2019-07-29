@@ -95,7 +95,7 @@ public class RegexpDemo {
     private static void testNegativeLookBehindUnit() {
         String str = "Круто \n Ты лучший \n\n <tag>\n";
         System.out.println(str.replaceAll("(?<!>)\\n", "<br/>"));
-//        System.out.println(str.replaceAll("([^>])\\n", "<br/>"));
+        System.out.println(str.replaceAll("\\n", "<br/>"));
     }
 
     private static void testG() {

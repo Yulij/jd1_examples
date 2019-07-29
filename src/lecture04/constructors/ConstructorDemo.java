@@ -1,6 +1,10 @@
 package lecture04.constructors;
 
-import static java.lang.Math.*;
+import lecture04.constructors.test.A;
+
+import static java.lang.Integer.max;
+import static java.lang.Math.PI;
+import static java.lang.Math.sin;
 
 /**
  * Class ConstructorDemo
@@ -8,18 +12,50 @@ import static java.lang.Math.*;
  * Created by yslabko on 12/01/2017.
  */
 class ConstructorDemo {
-    public static void main(String[] args) {
+    int a = 100;
+
+    public static void main(String[] args) throws CloneNotSupportedException {
+        double pi = PI*sin(.5);
+        ConstructorDemo demo = new ConstructorDemo();
+        ConstructorDemo demo1 = new ConstructorDemo();
+        demo.print();
+        B bObject = new B(80);
         B b = new B(10);
         C c1 = new C(10);
         C c2 = new C(5);
         c1.a = 666;
+        lecture04.constructors.test.A testA = new lecture04.constructors.test.A(50);
         System.out.println(c1.a);
         System.out.println(c2.a);
         c1.c = 555;
-        double pi = PI;
         System.out.println(max(c1.c, c2.c));
 
         System.out.println(c2.c);
+        System.out.println(testA.getA());
 
+        process((lecture04.constructors.test.A)testA.clone());
+
+
+
+    }
+
+    private static void process(A testA) {
+        testA.setA(555);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    void print() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "ConstructorDemo{" +
+                "a=" + a +
+                '}';
     }
 }

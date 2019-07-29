@@ -18,7 +18,7 @@ public class LambdaDemo {
 //        printByLambdaWithParameter(list);
 //        printByMethodReferences(list);
 
-        Integer[] array = list.toArray(new Integer[list.size()]);
+        Integer[] array = list.toArray(new Integer[0]);
 
         Arrays.sort(array, (element1, element2)->Integer.compare(element2, element1));
 

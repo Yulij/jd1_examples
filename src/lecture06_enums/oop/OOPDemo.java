@@ -12,5 +12,7 @@ public class OOPDemo {
         ab.print();
         C c = new C();
         c.print();
+        System.out.println(a.getSum(3,4));
+        System.out.println(ab.getSum(3,4));
     }
 }

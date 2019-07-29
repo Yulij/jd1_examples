@@ -7,24 +7,30 @@ package lecture05_wrappers.wrapper;
  */
 public class WrapperDemo {
     public static void main(String[] args) {
-        int i = 127;
+        int i = new Double(127).intValue();
         Integer oa = i; //создание объекта+упаковка
         Integer ob = i;
         System.out.println("oa==i " + (oa == i));// true
         System.out.println("ob==i " + (ob == i));// true
         System.out.println("oa==ob " + (oa == ob));// false(ссылки разные)
+        System.out.println("oa==ob " + (oa.equals(ob)));// false(ссылки разные)
         System.out.println("equals ->" + oa.equals(i)
                 + ob.equals(i)
                 + oa.equals(ob));// true
 
         Number [] nums = {10, 10.5f, 10L};
-        Long l = (long)nums[1];
-        System.out.println(l);
+//        Long l = (long)nums[1];
+//        System.out.println(l);
         numberDemo();
     }
 
     private static void numberDemo() {
+        Integer i1 = Integer.valueOf(11);
+        Integer i2 = null;
+        Long i3 = 11L;
+        int sum = i1;
         Float f = new Float(10.01); //double в Float
+        sum = f.byteValue();
         String s1 = Float.toString(0f); //float в String
         String s2 = String.valueOf(f); //Float в String
         Byte b = Byte.valueOf("120"); //String в Byte

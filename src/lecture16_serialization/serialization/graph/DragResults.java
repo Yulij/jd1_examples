@@ -20,7 +20,7 @@ public class DragResults implements Serializable {
     @Override
     public String toString() {
         return getClass().getSimpleName() + "@" + Integer.toHexString(hashCode())
-                + " " + id + " {car1=" + car1 +
+                + " id:" + id + " {car1=" + car1 +
                 ", car2=" + car2 +
                 ", result=" + result + '}';
     }
