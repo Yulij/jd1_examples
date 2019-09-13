@@ -22,8 +22,8 @@ public class CallableDemo implements Callable<Integer> {
         Thread t = new Thread(fTask);
         t.start();
 
-        Thread.sleep(1500);
-        System.out.println(fTask.get());
+//        Thread.sleep(1500);
+//        System.out.println(fTask.get());
         System.out.println("isDone() " + fTask.isDone());
         System.out.println("Сумма равна " + fTask.get(1, TimeUnit.SECONDS));
 //        fTask.get(2l, TimeUnit.SECONDS);

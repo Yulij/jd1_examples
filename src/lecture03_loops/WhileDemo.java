@@ -13,9 +13,11 @@ public class WhileDemo {
         while (i < 10) {
             if (i % 2 == 0) {
                 sum += i;
+                break;
             }
             i++;
         }
+
         System.out.print("sum = " + sum);
     }
 }

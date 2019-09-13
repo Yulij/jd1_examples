@@ -10,11 +10,7 @@ public class FixedThreadExecutorDemo {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService service = Executors.newFixedThreadPool(3);
         for(int i = 0; i < 100; i++) {
-            service.submit(new Runnable() {
-                public void run() {
-                    System.out.println(Thread.currentThread().getName());
-                }
-            });
+            service.submit(() -> System.out.println(Thread.currentThread().getName()));
         }
         service.shutdown();
     }

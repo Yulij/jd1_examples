@@ -10,13 +10,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class CachedThreadPoolDemo {
     static AtomicInteger counter = new AtomicInteger(1);
+    static Integer intCounter = 0;
     public static void main(String[] args) throws InterruptedException {
         ExecutorService service = Executors.newCachedThreadPool();
         for(int i = 0; i < 99; i++) {
-            service.submit(new Runnable() {
-                public void run() {
-                    System.out.println(counter.incrementAndGet() + " " + Thread.currentThread().getName());
-                }
+            service.submit(() -> {
+                System.out.println(counter.getAndIncrement() + " " + Thread.currentThread().getName());
+                System.out.println("Intcounter "+  ++intCounter + " " + Thread.currentThread().getName());
             });
         }
         TimeUnit.SECONDS.sleep(1);

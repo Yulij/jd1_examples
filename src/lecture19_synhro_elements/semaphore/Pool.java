@@ -43,7 +43,7 @@ public class Pool<T> {
             available.release();
     }
 
-    protected synchronized boolean markAsUnused(Object item) {
+    protected synchronized boolean markAsUnused(T item) {
         for (int i = 0; i < MAX_AVAILABLE; ++i) {
             if (item == items[i]) {
                 if (used[i]) {

@@ -9,7 +9,11 @@ public class ColorDemo {
     public static void main(String[] args) {
         Color red = Color.RED;
         System.out.println(red.name());
-        Color color = Color.getByColor("Blue color");
+        System.out.println(red.getColor());
+        Color color = Color.getByColor("Dark blue");
+        switch (color) {
+            case DARK_BLUE:
+        }
         System.out.println(color);
     }
 }

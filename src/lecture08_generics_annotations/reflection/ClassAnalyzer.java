@@ -28,13 +28,13 @@ public class ClassAnalyzer {
                 for (Annotation annotation : method.getAnnotations()) {
                     if (annotation instanceof Transactional) {
                         System.out.println("Transaction is started");
-//                        try {
-//                            method.invoke(new Object());
-//                        } catch (IllegalAccessException e) {
-//                            e.printStackTrace();
-//                        } catch (InvocationTargetException e) {
-//                            e.printStackTrace();
-//                        }
+                        try {
+                            method.invoke(new Object());
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        } catch (InvocationTargetException e) {
+                            e.printStackTrace();
+                        }
                         System.out.println("Transaction is ended");
                     }
                 }

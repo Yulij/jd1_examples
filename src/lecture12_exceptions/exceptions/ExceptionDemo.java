@@ -9,6 +9,7 @@ public class ExceptionDemo {
     public static void main(String[] args) {
         String word = "Fucker";
         try {
+            LOGGER.info("Before call say method.");
             say(word);
         } catch (MyBadPhraseException e) {
             e.printStackTrace();

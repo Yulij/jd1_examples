@@ -11,19 +11,23 @@ public class ArrayDemo {
     public static void main(String[] args) {
 //        arrayDemo();
         array2DimensionDemo();
-        User user1 = new User();
-        String year = user1.birthday;
+//        User user1 = new User();
+//        String year = user1.birthday;
     }
 
     private static void array2DimensionDemo() {
+        int [][] arr = new int[2][4];//{{{1,2,3}, {1,2,2}, 2, 2},{2,1,2,2}}
         int[][] array = {
-                {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 1}
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {1, 1, 1, 1},
+                {1, 1, 1, 1}
         };
         int sum = 0;
 
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[1].length; j++) {
-                sum += array[i][j];
+            for (int j = 0; j < array[i].length; j++) {
+                sum += array[j][i];
             }
         }
         System.out.println(sum);

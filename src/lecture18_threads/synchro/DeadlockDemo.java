@@ -23,7 +23,7 @@ public class DeadlockDemo {
                     } catch (InterruptedException e) {
 
                     }
-                    Thread.yield();
+//                    Thread.yield();
                     // Блокировка второго объекта
                     synchronized (two) {
                         System.out.println("Success Thread 1!");
@@ -35,7 +35,7 @@ public class DeadlockDemo {
             public void run() {
                 // Блокировка второго объекта
                 synchronized(two) {
-                    Thread.yield();
+//                    Thread.yield();
                     try {
                         Thread.sleep(10);
                     } catch (InterruptedException e) {

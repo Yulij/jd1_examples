@@ -1,7 +1,5 @@
 package intro.operators;
 
-import java.nio.charset.Charset;
-import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -12,6 +10,15 @@ import java.util.Scanner;
 public class Operators {
     public static void main(String[] args) {
         byte a = -128;
+        System.out.println("Enter positive number:");
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        sc.close();
+        System.out.println("n*n=" + Math.pow(number,2));
+
+
+
+
         Operators ops = new Operators();
 
         long b = 1;
@@ -76,6 +83,27 @@ public class Operators {
         }
 
 
+        switchStructure(i, 2, 10);
+        switchStructure(i);
+        switchStructure(i,9);
+        switchStructure();
+    }
+
+    public static void switchStructure(int ... amount) {
+        switch (amount[1]) {
+            case 1:
+            case 3:
+            case 5:
+                System.out.println("Нечет");
+                break;
+            default:
+        }
+    }
+
+    private static boolean  validateDigits() {
+
+        //time consumed
+        return false;
     }
 
     void print(int a, long ... longs) {

@@ -9,7 +9,7 @@ import lecture08_generics_annotations.generic.GenericBox;
  *
  * Created by yslabko on 05/23/2018.
  */
-@Fio
+@Fio(firstName = "Any")
 public class AnalyzerDemo {
     public static void main(String[] args) {
         ClassAnalyzer.analyzeClass(AnalyzerDemo.class);

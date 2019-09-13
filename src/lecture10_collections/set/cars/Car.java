@@ -13,5 +13,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Car {
-    String model = "UNKNOWN";
+    private String model = "UNKNOWN";
 }

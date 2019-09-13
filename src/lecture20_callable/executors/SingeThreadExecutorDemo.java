@@ -15,11 +15,7 @@ public class SingeThreadExecutorDemo {
                 .setNameFormat("Вычислитель # %d").build();
         ExecutorService service = Executors.newSingleThreadExecutor(tf);
         for(int i = 0; i < 10; i++) {
-            service.submit(new Runnable() {
-                public void run() {
-                    System.out.println(Thread.currentThread().getName());
-                }
-            });
+            service.submit(() -> System.out.println(Thread.currentThread().getName()));
         }
 
         service.shutdown();

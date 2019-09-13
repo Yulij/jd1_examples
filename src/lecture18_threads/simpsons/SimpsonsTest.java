@@ -7,7 +7,7 @@ package lecture18_threads.simpsons;
  */
 public class SimpsonsTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         CookieJar jar = new CookieJar();
 
@@ -15,6 +15,7 @@ public class SimpsonsTest {
         Marge marge = new Marge(jar);
 
         new Thread(homer).start();
+        Thread.sleep(20);
         new Thread(marge).start();
     }
 }

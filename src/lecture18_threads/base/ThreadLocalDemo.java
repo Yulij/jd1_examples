@@ -42,7 +42,7 @@ public class ThreadLocalDemo {
         th.start();
         System.out.println("Shared Thread Local (T1): " + shared.get());
         System.out.println("Shared Long (T1): " + sharedObject);
-        shared.set(-1L);
+        shared.set(-    1L);
         System.out.println("Shared Thread Local (T1): " + shared.get());
         System.out.println("Shared Long (T1): " + sharedObject);
         Thread.sleep(200);

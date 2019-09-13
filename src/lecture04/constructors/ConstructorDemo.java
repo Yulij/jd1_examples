@@ -25,6 +25,7 @@ class ConstructorDemo {
         C c2 = new C(5);
         c1.a = 666;
         lecture04.constructors.test.A testA = new lecture04.constructors.test.A(50);
+        testA.setContent("Test");
         System.out.println(c1.a);
         System.out.println(c2.a);
         c1.c = 555;
@@ -32,15 +33,21 @@ class ConstructorDemo {
 
         System.out.println(c2.c);
         System.out.println(testA.getA());
+        System.out.println(testA);
 
-        process((lecture04.constructors.test.A)testA.clone());
+        process(testA);
+//        process((lecture04.constructors.test.A)testA.clone());
 
+        lecture04.constructors.test.A arg2 = new lecture04.constructors.test.A(55);
+        System.out.println(testA.getA());
+        System.out.println((lecture04.constructors.test.A)testA.clone());
 
 
     }
 
-    private static void process(A testA) {
-        testA.setA(555);
+    private static void process(A argument) {
+        argument.setA(555);
+        argument.setContent("123");
     }
 
     @Override

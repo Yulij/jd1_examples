@@ -30,5 +30,9 @@ public class ForDemo {
             }
             System.out.println("i = " + i);
         }
+
+        for (; ; ) {
+            break;
+        }
     }
 }
